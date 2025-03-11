@@ -37,12 +37,12 @@ with mss.mss() as sct:
         image = cv2.cvtColor(image, cv2.COLOR_BGRA2BGR)
 
         # Generate timestamp for unique file names
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        #timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
         # Save the screenshot
-        screenshot_path = f"screenshots/question_{timestamp}.png"
-        cv2.imwrite(screenshot_path, image)
-        print(f"Screenshot saved: {screenshot_path}")
+        #screenshot_path = f"screenshots/question_{timestamp}.png"
+        #cv2.imwrite(screenshot_path, image)
+        #print(f"Screenshot saved: {screenshot_path}")
 
         # Convert to grayscale for OCR
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -64,11 +64,11 @@ with mss.mss() as sct:
         print("AI Answer:", answer)
 
         # Save extracted text and AI response
-        result_path = f"results/response_{timestamp}.txt"
-        with open(result_path, "w") as file:
-            file.write(f"Extracted Text:\n{extracted_text}\n\n")
-            file.write(f"AI Answer:\n{answer}\n")
-        print(f"Results saved: {result_path}")
+        #result_path = f"results/response_{timestamp}.txt"
+        #with open(result_path, "w") as file:
+        #    file.write(f"Extracted Text:\n{extracted_text}\n\n")
+        #    file.write(f"AI Answer:\n{answer}\n")
+        #print(f"Results saved: {result_path}")
 
     else:
         print(f"Monitor {monitor_index} not found. Available monitors: {len(monitors) - 1}")
